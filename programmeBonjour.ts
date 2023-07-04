@@ -2,9 +2,9 @@
 
 console.log("Comment t'appelles-tu ?");
 
-let prenom = readline.question()
+let prenom = readline.question();
 
-let reponse = "Bonjour, " + prenom;
+let reponse = 'Bonjour, ' + prenom;
 // ou alors: reponse = `Bonjor, ${prenom}`;
 
-console.log(reponse)
+console.log(reponse);
