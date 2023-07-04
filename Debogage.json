@@ -1,0 +1,11 @@
+{
+    "configuration":[
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Lanch Program",
+            "runTimeArgs": ["-r", "ts-node/registrer"],
+            "args": ["${workspaceFolder}/distance2Points.ts"]
+        }
+    ]
+}
