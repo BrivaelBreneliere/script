@@ -3,17 +3,28 @@ const readline = require('readline-sync');
 console.log('Bonjour ! Veuillez écrire <<Jouer>> pour démarrer une partie');
 
 let start = readline.question();
+let Jouer = 'Jouer';
 let coordonnéeX: number;
 let coordonnéeY: number;
+let randomDirection: string;
+const directions = ['droite', 'gauche', 'devant', 'derrière'];
 
-if (start === 'Jouer') {
+function startGame(start: string, Jouer: string): boolean {
+  return start === Jouer
+}
+
+// function selectRandomDirection(direction: string) {
+//   return randomDirection = directions[Math.floor(Math.random() * directions.length)];
+// }
+
+if (startGame(start, Jouer)) {
   console.log(
     "Dans ce jeu, vous êtes une personne aveugle, mais vous voulez voyager le plus loin possible. \
 Et pour cela vous avez une carte et un blob qui est votre animal domestique, il va vous proposer \
 un trajet pour un voyage le plus long possible. Le blob va aller dans des directions totalement\
 aléatoires : devant, derrière, à gauche et à droite. Et dans votre monde les régions sont \
 toutes carrées et le blob peut avancer d'une région à chaque fois et il vous dira à chaque fois \
- dans quelle direction il est allé. Et votre score va augmenter à chaque région de plus ! \
+dans quelle direction il est allé. Et votre score va augmenter à chaque région de plus ! \
 Votre objectif est de dire à chaque fois le nombre de fois que le \
 blob est passé dans la région. Si vous vous trompez vous aurez fini la partie.\
 Remarque 1 : à chaque fois que \
@@ -24,8 +35,6 @@ par nouvelles distances parcourues."
   );
 
   console.log("Le blob est tourné vers l'est");
-
-  const directions = ['droite', 'gauche', 'devant', 'derrière'];
 
   let directionJoueur = 'est';
   let coordonnéeX = 0;
