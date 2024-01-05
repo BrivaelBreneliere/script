@@ -7,15 +7,14 @@ let Jouer = 'Jouer';
 let coordonnéeX: number;
 let coordonnéeY: number;
 let randomDirection: string;
-const directions = ['droite', 'gauche', 'devant', 'derrière'];
 
 function startGame(start: string, Jouer: string): boolean {
   return start === Jouer
 }
 
-// function selectRandomDirection(direction: string) {
-//   return randomDirection = directions[Math.floor(Math.random() * directions.length)];
-// }
+function selectRandomDirection(directions: string[]) {
+  return directions[Math.floor(Math.random() * directions.length)];
+}
 
 if (startGame(start, Jouer)) {
   console.log(
@@ -47,7 +46,9 @@ par nouvelles distances parcourues."
   tableau.push([0, 0]);
 
   do {
-    const randomDirection = directions[Math.floor(Math.random() * directions.length)];
+
+    const directions = ['droite', 'gauche', 'devant', 'derrière'];
+    const randomDirection: string = selectRandomDirection(directions);
 
     if (randomDirection === 'devant' && directionJoueur === 'est') {
       console.log('Le blob a avancé', randomDirection, 'lui');
